@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: #6b7280;
+    }
+    .task-item {
+      transition: background-color 0.2s ease;
+    }
+    .task-item.completed-task {
+      background-color: #f3f4f6;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg shadow-md w-full max-w-md overflow-hidden">
+    <div class="p-6 border-b">
+      <h1 class="text-xl font-bold">Todo List</h1>
+      <p class="text-gray-500 text-sm">Add, complete, and delete your tasks</p>
+    </div>
+    
+    <div class="p-6">
+      <div class="flex space-x-2 mb-4">
+        <input 
+          type="text" 
+          id="new-task-input" 
+          placeholder="Add a new task..." 
+          class="flex-1 px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+        <button 
+          id="add-task-btn" 
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Add
+        </button>
+      </div>
+      
+      <div id="tasks-container" class="space-y-2">
+        <p id="empty-state" class="text-center text-gray-500 py-4">No tasks yet. Add one above!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
